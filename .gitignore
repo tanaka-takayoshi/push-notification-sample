@@ -87,6 +87,8 @@ csx
 
 # Windows Store app package directory
 AppPackages/
+# Windows Store app key
+*.pfx
 
 # Others
 [Bb]in
