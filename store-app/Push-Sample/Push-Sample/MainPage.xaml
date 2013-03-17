@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Push_Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Push_Sample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="20">
+            <StackPanel>
+                <TextBlock Grid.Row="0" FontSize="45">Windows Azureモバイルサービス</TextBlock>
+                <TextBlock Grid.Row="0" FontSize="45">プッシュ通知デモ</TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Margin="20">
+            <StackPanel>
+                <TextBlock FontSize="36" Margin="5">メッセージ</TextBlock>
+                <TextBox Name="TextInput" Margin="5"  MinHeight="50" MinWidth="300" FontSize="36"></TextBox>
+                <TextBlock FontSize="36" Margin="5">説明</TextBlock>
+                <TextBox Name="DetailInput" Margin="5"  MinHeight="50" MinWidth="300" FontSize="36"></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="ButtonSend" Margin="5" FontSize="24" Click="ButtonSend_Click">送信</Button>
+                    <Button Name="ButtonDel"  Margin="5" FontSize="24" Click="ButtonDelete_Click"  >メッセージをすべて削除</Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <ListView Name="ListItems" Margin="20,10,0,0" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock FontSize="30" Text="{Binding Text}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>
